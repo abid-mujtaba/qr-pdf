@@ -1,0 +1,6 @@
+# Ignore all generated files
+
+*.tex
+*.aux
+*.log
+*.pdf
