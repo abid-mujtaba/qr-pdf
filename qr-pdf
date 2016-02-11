@@ -1,0 +1,4 @@
+#! /bin/sh
+
+./qr-pdf.py http://goo.gl/forms/v2EUfBaWuf
+pdflatex qr-pdf.tex

@@ -30,16 +30,25 @@ def main():
 
     length = len(matrix)        # The side length of the QR Code
 
-    print("Length: " + str(length))
-
     # Load the template
     loader = jinja2.FileSystemLoader(searchpath=".")        # Search for templates in current folder
     env = jinja2.Environment(loader=loader)
     template = env.get_template(TEMPLATE_FILE)
 
+    # Create data for template
+    data = []
+
+    for ii in range(length):
+        for jj in range(length):
+
+            if (matrix[ii][jj]):
+
+                data.append([(ii, -jj), (ii+1, -jj-1)])
+
+
     # Write rendered template to tex file
     fout = open(TEX_FILE, "w")
-    fout.write(template.render())
+    fout.write(template.render(data=data))
     fout.close()
 
 

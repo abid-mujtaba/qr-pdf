@@ -3,6 +3,9 @@
 \usepackage{tikz}
 
 \begin{document}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[x=0.25cm,y=0.25cm]
+        {% for coods in data %}
+            \draw [fill=black] {{ coods[0] }} rectangle {{ coods[1] }};
+        {% endfor %}
     \end{tikzpicture}
 \end{document}
